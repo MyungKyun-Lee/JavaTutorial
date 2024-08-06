@@ -5,8 +5,12 @@ public class _01_Array_q {
 	public static void main(String[] args) {
 		// 08-06 조별 문제풀이
 		// 기본 문제1
-//		int[] array_a = new int[4];
-		int[] array_a = {30, 40, 50, 60, 55};
+		int[] array_a = new int[5];
+		array_a[0] = 30;
+		array_a[1] = 40;
+		array_a[2] = 50;
+		array_a[3] = 60;
+		array_a[4] = 55;
 		System.out.println(array_a[0]+"/"+array_a[1]+"/"+array_a[2]+"/"+array_a[3]+"/"+array_a[4]);
 		// 기본 문제2
 		String[] nameFirst = {"kim","lee","park"};
@@ -20,16 +24,16 @@ public class _01_Array_q {
 		// 중 문제5
 		lotto[0] = lotto[0];
 		lotto[1] = lotto[0] + lotto[1];
-		lotto[2] = lotto[0] + lotto[1] + lotto[2];
-		lotto[3] = lotto[0] + lotto[1] + lotto[2] + lotto[3];
-		lotto[4] = lotto[0] + lotto[1] + lotto[2] + lotto[3] + lotto[4];
-		lotto[5] = lotto[0] + lotto[1] + lotto[2] + lotto[3] + lotto[4] + lotto[5];
+		lotto[2] = lotto[1] + lotto[2];
+		lotto[3] = lotto[2] + lotto[3];
+		lotto[4] = lotto[3] + lotto[4];
+		lotto[5] = lotto[4] + lotto[5];
 		System.out.println(lotto[0]+"/"+lotto[1]+"/"+lotto[2]+"/"+lotto[3]+"/"+lotto[4]+"/"+lotto[5]);
 		// 중 문제6
-		int[] lotto2 = {6,12,33,4,5,26};
-		System.out.println(lotto[3] % 2 > 0 );
+		int[] lotto_n = {6,12,33,4,5,26};
+		System.out.println(lotto_n[3] % 2 != 0 );
 		// 중 문제7
-		int money = 2751;
+		int money = 27510;
 		int pay = 10000;
 		int calcul = pay - money;
 		System.out.println("천원"+calcul%10000/1000+"개, 백원"+calcul%1000/100+"개, 십원"+calcul%100/10+"개");
