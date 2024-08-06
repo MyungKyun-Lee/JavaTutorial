@@ -6,7 +6,7 @@ public class Test01 {
 		// TODO Auto-generated method stub
 		// 정수 변수 선언
 		int a = 10;
-		byte aa = 10;
+		byte aa = -128;
 		System.out.println(a);
 		System.out.println(aa);
 		
