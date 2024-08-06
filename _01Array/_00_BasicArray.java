@@ -13,7 +13,7 @@ public class _00_BasicArray {
 		// 공부할때 : 배열의 길이, 배열의 인덱스 기억하자!
 		
 		//배열 선언문
-			int[] lotto = new long[3];
+			int[] lotto = new int[3];
 			System.out.println(lotto[0]+"/"+lotto[1]+"/"+lotto[2]);
 			lotto[1] = 30;
 			lotto[0] = 20;
