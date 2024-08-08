@@ -96,9 +96,7 @@ public class _00_quest {
 		
 		// 문제10
 		int nsum2 = 0;
-		for (int i=987654321; i>0; i=i/10) {
-			nsum2 += i%10;
-		}
+		for (int i=987654321; i>0; i=i/10) nsum2 += i%10;
 		System.out.println(nsum2);
 	}
 

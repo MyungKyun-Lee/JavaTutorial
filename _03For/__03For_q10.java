@@ -26,6 +26,7 @@ public class __03For_q10 {
 			num = num/10;
 		}
 		System.out.println(nsum);
+
 		
 		int sumofNumber = 0;
 		for(int i = 100000000; i >=1; i /= 10) {
@@ -33,7 +34,11 @@ public class __03For_q10 {
 			System.out.print("+");
 			sumofNumber += (987654321/i % 10);
 		}
-			System.out.println("=" + sumofNumber);
+		System.out.println("=" + sumofNumber);
+		
+		int nsum2 = 0;
+		for (int i=987654321; i>0; i=i/10) nsum2 += i%10;
+		System.out.println(nsum2);
 
 	}
 
