@@ -34,7 +34,39 @@ public class _00_for_basic {
 				System.out.print(a[i]+"/");
 		}
 		System.out.println(".");
+		
+		// 1. 50이상 점수 합
+		int sum = 0;
+		for (int i=0; i < a.length; i++) {
+			if (a[i] >= 50)
+				sum += a[i];
+		}
+		System.out.print("sum: "+sum+"/");
+		System.out.println(".");
 
+		// 2. 평균은. 50점 이상
+		int sum2 = 0;
+		int index = 0;
+		for (int i=0; i < a.length; i++) {
+			if (a[i] >= 50) {
+				sum2 += a[i]; index++;
+			}
+		}
+		System.out.print("avr: "+(sum2/index)+"/");
+		System.out.println(".");
+
+		// 3. 평균은. 최저점수는 포함하지 마시오
+		int sum3 = 0;
+		int min = a[0];
+		double averge = 0.0;
+		for (int i=0; i < a.length; i++) {
+			if (min >= a[i]) min = a[i];
+			sum3 += a[i];
+		}
+		sum3 = sum3-min;
+		averge = (double)sum3 / (a.length-1);
+		System.out.print("min: "+min+" sum: "+sum3+" index: "+(a.length-1)+" avr: "+averge+"/");
+		System.out.println(".");
 	}
 
 }
