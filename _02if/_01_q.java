@@ -3,7 +3,7 @@ package _02if;
 public class _01_q {
 
 	public static void main(String[] args) {
-		// for문 사용하지 않습니다
+		// for문 사용하지 않고 문제풀이
 		
 		// 문제1
 		double avrage = 89.2;
@@ -52,7 +52,7 @@ public class _01_q {
 		sum2 += a[3];
 		sum2 += a[4];
 		System.out.println("a배열 값의 합계는 "+sum2+" 입니다");
-		// 문제7
+		// 문제7 
 		int[] aa = {45,34,64};
 		int max = 0;
 		int cnt = 0;
@@ -78,12 +78,30 @@ public class _01_q {
 		if (x[0]%cX==0 && y[0]%cY==0) System.out.println("맞은새는 x: "+x[0]+" y: "+y[0]);
 		if (x[1]%cX==0 && y[1]%cY==0) System.out.println("맞은새는 x: "+x[1]+" y: "+y[1]);
 		if (x[2]%cX==0 && y[2]%cY==0) System.out.println("맞은새는 x: "+x[2]+" y: "+y[2]);
+		// 기울기로 풀기 다른분
+//		 int [] x= {6,5,9};
+//		 int [] y= {4,10,6};
+//		 int [] bullet= {3,2};
+//		 double gradientBullet = bullet[1]/bullet[0];
+//		 double gradientBird0 = y[0]/x[0];
+//		 double gradientBird1 = y[1]/x[1];
+//		 double gradientBird2 = y[2]/x[2];
+//		 
+//		 if(gradientBullet == gradientBird0) {
+//			 System.out.println("총알에 맞는 새는 0번입니다.");
+//		 }
+//		 if(gradientBullet == gradientBird1) {
+//			 System.out.println("총알에 맞는 새는 1번입니다.");
+//		 }
+//		 if(gradientBullet == gradientBird2) {
+//			 System.out.println("총알에 맞는 새는 2번입니다.");
+//		 }
 		
 		// up3
 		int xx = 10; /* 가로 5 */
 		int yy = 20; /* 세로 6 */
 		int mx = 15; /* 가로 2 */
-		int my = 26;  /* 세로 2 */
+		int my = 26; /* 세로 2 */
 		
 		if ((xx-2 <= mx && xx+7 >= mx+2) && (yy-2 <= my && yy+8 >= my+2)) {
 			System.out.println("Hit");

@@ -1,5 +1,7 @@
 package _02if;
 
+//import java.util.Arrays;
+
 public class _01_qq {
 
 	public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class _01_qq {
 		if (aaa[0] < aaa[1]) { maxx = aaa[0]; aaa[0] = aaa[1]; aaa[1] = maxx;}
 		System.out.println(aaa[0]+"/"+aaa[1]+"/"+aaa[2]);
 		
-		
+		//---------------------------------------------------------------
 		int[] aa = {45,34,64};
 		int max = 0;
 		int aPlus = 0;
@@ -39,7 +41,7 @@ public class _01_qq {
 			cnt = 3;
 		}
 		System.out.println("a배열에서 분해하여 합한 큰수는"+max+"이고 "+cnt+"몇번째 입니다.");
-
+		//---------------------------------------------------------------
 		int [] b= {64,45,34};
 		 int b0Sum=(b[0]/10)+(b[0]%10);
 		 int b1Sum=(b[1]/10)+(b[1]%10);
@@ -51,7 +53,7 @@ public class _01_qq {
 		 }else {
 			 System.out.println("선택할 숫자: 2번째"+" 숫자의 합: "+b2Sum);
 		 }
-		 
+		//---------------------------------------------------------------
 		 int [] x= {6,5,9};
 		 int [] y= {4,10,6};
 		 int [] bullet= {3,2};
@@ -69,6 +71,18 @@ public class _01_qq {
 		 if(gradientBullet == gradientBird2) {
 			 System.out.println("총알에 맞는 새는 2번입니다.");
 		 }
+		 
+		 //---------------------------------------------------------------
+		 int num = 123;
+		 String strNum = Integer.toString(num);
+		 int[] arrNum = new int[strNum.length()];
+		 
+		 for (int i = 0; i < strNum.length(); i++) {
+		 	arrNum[i] = strNum.charAt(i) - '0';
+		 }
+		 System.out.println(arrNum[0] +"/"+ arrNum[1] +"/" + arrNum[2]);
+//		 System.out.print(Arrays.toString(arrNum));  // import java.util.Arrays;
+
 	}
 
 }

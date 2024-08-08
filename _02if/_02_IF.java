@@ -1,4 +1,4 @@
-package _01Array;
+package _02if;
 
 class _02_IF {
 
