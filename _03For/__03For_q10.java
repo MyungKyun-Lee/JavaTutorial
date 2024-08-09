@@ -13,21 +13,7 @@ public class __03For_q10 {
 		}
 		System.out.println(nsum);
 		
-		for(int i = 100; i <=999; i++) {
-			if((i/10) % 10 == 3) {				// 100에서 999 중 십의 자리가 6인 수
-				System.out.println(i);			// 의 반복적인 나열
-			}
-		}
-		
-		int num = 987654321;
-		int nsum = 0;
-		for (int i=0; i<9; i++) {
-			nsum += num%10;
-			num = num/10;
-		}
-		System.out.println(nsum);
 
-		
 		int sumofNumber = 0;
 		for(int i = 100000000; i >=1; i /= 10) {
 			System.out.print((987654321/i)%10);
@@ -40,6 +26,12 @@ public class __03For_q10 {
 		for (int i=987654321; i>0; i=i/10) nsum2 += i%10;
 		System.out.println(nsum2);
 
+		
+//		for(int i = 100; i <=999; i++) {
+//			if((i/10) % 10 == 3) {				// 100에서 999 중 십의 자리가 6인 수
+//				System.out.println(i);			// 의 반복적인 나열
+//			}
+//		}
 	}
 
 }

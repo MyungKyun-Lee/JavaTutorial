@@ -28,7 +28,7 @@ public class _00_quest {
 		int sumS = 0;
 		for (int i=100; i<= 999; i++) {
 			sum += i;
-				sumS += (i/100) + ((i%100)/10) + (i%10);
+			sumS += (i/100) + ((i%100)/10) + (i%10);
 		}
 //		System.out.println("100~999 합:"+sum+" 4+5+3합: "+(453/100)+"/"+((453%100)/10)+"/"+(453%10));
 		System.out.println("100~999 합:"+sum+" 개별합: "+sumS);
@@ -77,22 +77,14 @@ public class _00_quest {
 		System.out.println("="+sum);
 		
 		// 문제9
-		sum = 0;
-		fib = 1;
-		prev = 0;
-		prevPrev = 0;
-		for (int i=1; i < 20; i++) {
-			if (prev !=0) {
-				fib = prev + prevPrev;
-				prevPrev = prev;
-			}
-			prev = fib;
-			sum += fib;
-			i = fib;
-			System.out.print(fib+"(i="+i+")");
-			if (i<20) System.out.print("+");
+		int fib1 = 0;
+		int prev1 = 0;
+		for (int i=1; i < 20; i = fib1) {
+			System.out.println("i= "+i+" prev="+prev1+" fib="+fib1);
+			fib1 = prev1 + i;
+			prev1 = i;
+//			i = fib1;  // for 증가감소에 이동 시킴
 		}
-		System.out.println("="+sum);
 		
 		// 문제10
 		int nsum2 = 0;
