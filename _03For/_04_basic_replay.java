@@ -9,7 +9,7 @@ public class _04_basic_replay {
 		
 		// 문제2) 1부터 100까지 숫자중에서 홀수의 총합
 		int sum = 0;
-		for (int i=1; i<=999; i+=2) sum +=i;
+		for (int i=1; i<=100; i+=2) sum +=i;
 		System.out.println("합계: "+sum);
 		
 		// 문제3) 다음과 같이 출력하시오   10  9  8  7  6  5  4  3  2  1
@@ -34,7 +34,7 @@ public class _04_basic_replay {
 		String test = "abcdeabce";
 		char aaa ;
 		int a_cnt =0;
-	    for (int i=0; i < 9; i ++) {
+	    for (int i=0; i < test.length(); i ++) {
 	    	aaa = test.charAt(i);
 //	    	System.out.println(aaa);
 	    	if (aaa == 'a') a_cnt++;

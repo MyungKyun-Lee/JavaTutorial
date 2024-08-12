@@ -48,7 +48,8 @@ public class _04_q10 {
 		int pre3_cnt = -1;
 		int max3 = -1;
 		int max3_cnt = -1;
-		for (int i=0; i<arr3.length; i++) {
+//		for (int i=0; i<arr3.length; i++) {
+		for (int i: arr3) {
 			if (pre3 == arr3[i]) {
 				pre3_cnt++;
 			} else {
@@ -64,10 +65,11 @@ public class _04_q10 {
 		
 		
 		// 문제14) 가장 긴 터널의 알파벳 이름과 숫자를 찾으세요
+//		String ttt ="abcdfabcdf";
 		String ttt ="aabbbcccaaaaddbbbaaaaa";
-		char pre_a = 'z';
+		char pre_a = ttt.charAt(0);
 		int  pre_cnt = 0;
-		char max4_a = 'z';
+		char max4_a = ttt.charAt(0);
 		int  max4_cnt = 0;
 		
 		for (int i=0; i<ttt.length(); i++) {
