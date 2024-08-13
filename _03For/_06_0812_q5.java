@@ -10,12 +10,16 @@ public class _06_0812_q5 {
 		String a  = in.nextLine();
         System.out.println(a);
 
-        boolean t = true;
-        int a_length = a.length();
-        for (int i=0; i<a_length/2; i++) {
-        	if (a.charAt(i) != a.charAt(a_length-1-i)) t = false;
+        if(a.length() > 0 && a.length() < 10) {
+	        boolean t = true;
+	        int a_length = a.length();
+	        for (int i=0; i<a_length/2; i++) {
+	        	if (a.charAt(i) != a.charAt(a_length-1-i)) t = false;
+	        }
+	        System.out.println(t);
+        } else {
+        	System.out.println("10자리이하로 입력하세요!");
         }
-        System.out.println(t);
 	}
 
 }

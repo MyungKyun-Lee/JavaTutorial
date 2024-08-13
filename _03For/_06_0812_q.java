@@ -47,7 +47,7 @@ public class _06_0812_q {
 		
 		// 미션4) 0이 의미하는 것은 공터, 공터는 연속적, 건물을 지을 수 있는 위치는 모두 몇개
 		int[] arr = {1,0,0,0,1,1,1,0,0,0,0,1,1,1,1,0,0,0,1};
-		int size = 3;  // 건물 사이즈
+		int size = 1;  // 건물 사이즈
 		int p_arr_val = arr[0]; // 초기값 이전 배열값
 		int max_val4 = 0;       // 최대값
 		int cnt = 0;			// 건물수
@@ -82,7 +82,7 @@ public class _06_0812_q {
 					pre_a = "";
 				}
 				else {
-					System.out.println("result="+result+" pre_a="+pre_a+" cla_c="+cla_c);
+//					System.out.println("result="+result+" pre_a="+pre_a+" cla_c="+cla_c);
 					if (cla_c == '-') result = result - Integer.parseInt(pre_a);
 					else if (cla_c == '+') result = result + Integer.parseInt(pre_a);
 					else if (cla_c == '*') result = result * Integer.parseInt(pre_a);
@@ -103,32 +103,37 @@ public class _06_0812_q {
 		
 		// 미션7) 변수를 사용하지 않고 배열만 이용하여 푸는 방법
 		int[] a7 = {34,2,35,8,31,45};
-		if (a7[0] >= a7[1]) a7[1] = a7[0];
-		if (a7[1] >= a7[2]) a7[2] = a7[1];
-		if (a7[2] >= a7[3]) a7[3] = a7[2];
-		if (a7[3] >= a7[4]) a7[4] = a7[3];
-		if (a7[4] >= a7[5]) a7[5] = a7[4];
+		int temp = a7[0];
+		for (int i=1; i<a7.length; i++) {
+			if (a7[i-1] > a7[i]) {
+				temp = a7[i];
+				a7[i] = a7[i-1];
+				a7[i-1] = temp;
+			}
+		}
 		System.out.println("미션7->"+"a7[5]= "+a7[5]);
 		
 		// 미션8) 0번인덱스와 그 다음 인덱스를 비교하여 큰 수를 뒤로 배치
 		int[] a8 = {34,2,35,8,31,45};
-		if (a8[0] < a8[1]) a8[0] = a8[1];
-		if (a8[0] < a8[2]) a8[0] = a8[2];
-		if (a8[0] < a8[3]) a8[0] = a8[3];
-		if (a8[0] < a8[4]) a8[0] = a8[4];
-		if (a8[0] < a8[5]) a8[0] = a8[5];
+		int temp2 = a8[0];
+		for (int i=1; i<a8.length; i++) {
+			if (a8[0] < a8[i]) {
+				temp = a8[0];
+				a8[0] = a8[i];
+				a8[i] = temp;
+			}
+		}
 		System.out.println("미션8->"+"max= "+a8[0]);
 
 		// 특별1)
 		String a13 = "6/4/3/2/5/1/4/5/6/7/8/9/1/2/3/4/5/6";
-		int[] aa= new int[10];
+		int[] aa = new int[10];
 		int b13 = a13.charAt(0);
-		for (int i=0; i<aa.length; i++) aa[i] = 0;
+//		for (int i=0; i<aa.length; i++) aa[i] = 0;
 		for (int i=0; i<a13.length(); i++) {
 			b13 = a13.charAt(i)-'0';
-			if (b13 >=0 && b13 < 10)
+			if (b13 >=0 && b13 < 10) aa[b13]++;
 //			System.out.println(b13);
-			aa[b13]++;
 		}
 		for (int i=0; i<aa.length; i++) System.out.print("aa["+i+"]="+aa[i]+" ");
 		System.out.println("<- 특별1");
