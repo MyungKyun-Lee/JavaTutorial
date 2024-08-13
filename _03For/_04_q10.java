@@ -44,12 +44,12 @@ public class _04_q10 {
 		
 		// 문제13) 숫자는 터널의 번호이다. 터널의 길이가 가장 긴 숫자와 길이를 출력
 		int[] arr3 = {1,2,3,0,0,0,1,2,2,4,2,2,2,2,2,2,2,0,0,0,0,0,3,3};
-		int pre3 = -1;
+		int pre3     = -1;
 		int pre3_cnt = -1;
-		int max3 = -1;
+		int max3     = -1;
 		int max3_cnt = -1;
-//		for (int i=0; i<arr3.length; i++) {
-		for (int i: arr3) {
+		for (int i=0; i<arr3.length; i++) {
+//		for (int i: arr3) {
 			if (pre3 == arr3[i]) {
 				pre3_cnt++;
 			} else {
@@ -61,7 +61,7 @@ public class _04_q10 {
 				max3 = arr3[i];
 			}
 		}
-		System.out.println("max cnt="+max3_cnt+" max item="+max3);
+		System.out.println("max3 cnt="+max3_cnt+" max item="+max3);
 		
 		
 		// 문제14) 가장 긴 터널의 알파벳 이름과 숫자를 찾으세요
@@ -85,7 +85,7 @@ public class _04_q10 {
 				max4_a = a;
 			}
 		}
-		System.out.println("max cnt="+max4_cnt+" max item="+max4_a);
+		System.out.println("max4 cnt="+max4_cnt+" max item="+max4_a);
 		
 		// 문제15) 압축하시오. 압축 하는 방법 a2b3c3a4d2b3a5
 		String ttt2 ="aabbbcccaaaaddbbbaaaaa";
