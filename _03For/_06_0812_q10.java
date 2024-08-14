@@ -9,25 +9,23 @@ public class _06_0812_q10 {
 		Random r = new Random();
 
 		int[] lotto = new int[6];
-		int num4=0;
-		int cnt = 5;
+		int k = 0;
 		int max = -1;
-		lotto[5] = r.nextInt(9)+1;
-				
-		for (int i=0; i<cnt; i++ ) {
 
-			if (max != lotto[i]) {
-//				lotto[i] = r.nextInt(9)+1;
-				max = lotto[i];
-				i++;
-			} else {
-				System.out.println(i+"/"+temp);
+		for (int i=0; i<6; ) {
+			if (i == k) {
+				max = r.nextInt(45)+1;
+				lotto[k] = max;
+				k++; 
 				i = 0;
-			}
-			System.out.println("random[6]="+lotto[0]+"/"+lotto[1]+"/"+lotto[2]+"/"+lotto[3]+"/"+lotto[4]+"/"+lotto[5]+"/");
+			} else if ((k-1)>i && max == lotto[i]) {
+					k--;
+			} else  i++;
+
+//			System.out.println(i+"/"+k);
+//			System.out.println("random[6]="+lotto[0]+"/"+lotto[1]+"/"+lotto[2]+"/"+lotto[3]+"/"+lotto[4]+"/"+lotto[5]+"/");
 		}
-		
-		
+		System.out.println("random[6]="+lotto[0]+"/"+lotto[1]+"/"+lotto[2]+"/"+lotto[3]+"/"+lotto[4]+"/"+lotto[5]+"/");
 
 	}
 
