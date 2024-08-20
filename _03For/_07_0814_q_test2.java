@@ -13,7 +13,7 @@ public class _07_0814_q_test2 {
 		
 		Scanner in = new Scanner(System.in);
 		
-		while (sum_k>last) {
+		while (sum_k<last) {
 		
 			System.out.println("[엔터키] 주사위를 던지세요");
 			int k = in.nextInt();
