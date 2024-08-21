@@ -59,17 +59,18 @@ public class _02_0820_q {
 		
 		// 문제5) carnum배열은 자동차 번호, 자동차 번호의 마지막 번호는 해당 차량이 주차할 주차번호, 만약 주차번호에 다른 차량이 주차되어 있으면 다음 주차번호에 주차
 		System.out.println("ans 5-------------------------");
-		int[] carnum = {1232, 1221, 1235, 1252, 1234, 4536, 3457, 3238, 3229, 2599};
+		int[] carnum = {1232, 1221, 1235, 1252, 1234, 4536, 3457, 3239, 3229, 2599};
 		int[] parking = new int[10];
 		for (int i=0; i<carnum.length; i++) {
-			int parkingNum = carnum[i]%10;
+			int parkingNum = carnum[i]%parking.length; // 10
+			
 			for (int j=parkingNum; j<parking.length; ) {  // j++ 증가값 대신 계산값으로 정리
 				if (parking[j] == 0) {
 					parking[j] = carnum[i];
 					break;
 				} else {
 					j++; 
-					j %= 10;
+					j %= parking.length; // 10
 				}
 			}
 		}

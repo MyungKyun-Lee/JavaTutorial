@@ -1,6 +1,7 @@
 package _04_2For;
 
 import java.util.regex.Pattern;
+import java.util.Scanner;
 
 public class _02_test {
 
@@ -15,26 +16,19 @@ public class _02_test {
 //        System.out.println(Pattern.matches(regExp, email1));
 //        System.out.println(Pattern.matches(regExp, email2));
 		
-		System.out.println("문제 5번");
-		int[] carNum = {1232,1221,1235,1252,1234,4536,3457,3238,3229,2599};
-		int[] parking = new int[10];
-		for (int i = 0; i < carNum.length-1; i++) {
-			if (parking[carNum[i] % 10] == 0) {
-				parking[carNum[i] % 10] = carNum[i];
-			} else if (parking[carNum[i] % 10] != 0) {
-				parking[(carNum[i] % 10) + 1] = carNum[i];
-				if (parking[(carNum[i] % 10) + 1] != 0) {
-					
-				}
-			}
-		}
-		if (parking[carNum[carNum.length-1] % 10] == 0) {
-			parking[carNum[carNum.length-1] % 10] = carNum[carNum.length-1];
-		}
-		for (int i = 0; i < parking.length; i++) {
-			System.out.println(parking[i]);
-		}
-
+		Scanner scanner = new Scanner(System.in);
+        String name, address;
+        int age;
+        double weight;
+                
+        System.out.println("당신의 나이를 입력하세요.");
+        age = scanner.nextInt();
+        scanner.nextLine(); //버퍼삭제
+        System.out.println("당신의 이름을 입력하세요.");
+        name = scanner.nextLine();
+                
+        System.out.printf("당신의 나이는 %d입니다.%n",age);
+        System.out.printf("당신의 이름은 %s입니다.%n",name);     
 	}
 
 }
