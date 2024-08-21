@@ -48,7 +48,9 @@ public class _02_0820_q {
 		for (int i=b.length-1; i>0; i--) {
 			for (int j=0; j<i; j++) {
 				if (b[i] < b[j]) {
-					temp = b[j]; b[j] = b[i]; b[i] = temp;
+					temp = b[j]; 
+					b[j] = b[i]; 
+					b[i] = temp;
 				}
 			}
 			for (int k=0; k<b.length; k++) System.out.print(b[k]+","); System.out.println("");
