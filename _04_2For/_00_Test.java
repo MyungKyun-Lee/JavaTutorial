@@ -4,7 +4,7 @@
 // 프로젝트 설명: 단어 맞추기를 기본으로 한 프로젝트. 기존의 단어 맞추기에서 벗어나 가운데 글자를 추론하여 맞히는 것으로 목표를 설정.
 //			  두 가지의 난이도를 설정하였고, 3문제 이상 연속으로 맞혔을 경우 높은 정확도로 인하여 추가 점수를 부여.
 //			  최대 140점.
-package _06Game;
+package _04_2For;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,6 +12,10 @@ import java.util.Scanner;
 	public class _00_Test {
 
 		public static void main(String[] args) {
+			String RED = "\u001B[31m";
+			String BLUE = "\u001B[34m";
+			String RESET = "\u001B[0m";
+			
 			String[] a = {"탕수육","연포탕","회덮밥","비빔밥","햄버거","짜장면","순대국","돈까스","순두부","육개장","떡볶이","불고기","삼겹살","갈비탕","잡채밥","콩국수","매운탕","삼계탕","닭갈비","김치전"};
 			String[] aA = {"마라탕","똠양꿍","팥빙수","막국수","라볶이","설렁탕","감자탕","만두국","감자전","된장국","갈비찜","파스타","감자전","김치찜","쌀국수","수제비","물냉면","전복죽","리조또","아욱국"};
 			Scanner in = new Scanner(System.in);
@@ -63,11 +67,11 @@ import java.util.Scanner;
 				
 				// 정답일 경우 10점 추가 및 추가점수 체크
 				if (a[num].charAt(1) == b.charAt(0)) {
-					System.out.println("정답");
+					System.out.println(BLUE+"정답"+RESET);
 					point += 10;
 					cnt++;
 				} else {
-					System.out.println("오답");
+					System.out.println(RED+"오답"+RESET);
 					cnt = 0;
 				}
 				// cnt가 3이상일 경우 추가 점수 매번 부여
