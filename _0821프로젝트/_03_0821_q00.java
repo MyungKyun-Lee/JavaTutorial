@@ -32,7 +32,7 @@ public class _03_0821_q00 {
 				continue;
 			}
 			// 입력값
-			String b = in.nextLine();
+			String b = in.nextLine();             // keyboard 입력을 받는다
 			// 정답일 경우 10점 추가 및 추가점수 체크
 			if (a[num].charAt(1) == b.charAt(0)) {
 				System.out.println("정답");
@@ -49,9 +49,10 @@ public class _03_0821_q00 {
 				point += 5;
 			}
 		}
+		in.close();
 		// 총 점수 계산
 		System.out.println(point);
-
+		
 	}
 
 }

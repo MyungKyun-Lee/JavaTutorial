@@ -8,8 +8,12 @@ package _04_2For;
 
 import java.util.Random;
 import java.util.Scanner;
-
-	public class _00_Test {
+import java.util.Timer;
+import java.util.TimerTask;
+	
+public class _00_Test {
+		//카운트다운을 수행할 변수 선언 실시
+		static int count = 1;
 
 		public static void main(String[] args) {
 			String RED = "\u001B[31m";
@@ -20,6 +24,22 @@ import java.util.Scanner;
 			String[] aA = {"마라탕","똠양꿍","팥빙수","막국수","라볶이","설렁탕","감자탕","만두국","감자전","된장국","갈비찜","파스타","감자전","김치찜","쌀국수","수제비","물냉면","전복죽","리조또","아욱국"};
 			Scanner in = new Scanner(System.in);
 			Random r = new Random();
+			Timer timer=new Timer();
+			
+			TimerTask task1 = new TimerTask() { 
+				public void run() {
+					if(count <= 5){ //count값이 5보다 작거나 같을때까지 수행
+						System.out.println("[카운트다운 : "+count+"]");
+						count++; //실행횟수 증가 
+					}
+					else{
+						timer.cancel(); //타이머 종료
+						System.out.println("[카운트다운 : 종료]");
+					}
+				}
+			};
+			
+			
 			
 			System.out.println("점심 메뉴 맞추기 (빈칸을 채워라!!!)");
 			int c=0;
@@ -62,6 +82,8 @@ import java.util.Scanner;
 					i = i - 1;
 					continue;
 				}
+				
+				timer.schedule(task1, 1000, 3000); //실행 Task, 1초뒤 실행, 1초마다 반복
 				// 입력값
 				String b = in.nextLine();
 				
@@ -84,13 +106,9 @@ import java.util.Scanner;
 				System.out.println("--------------------------");
 				
 			}
+			in.close();
 			// 총 점수 계산
 			System.out.println("총 점수: "+point);
-		
-		
-		
-		
-		
 		
 		
 		
