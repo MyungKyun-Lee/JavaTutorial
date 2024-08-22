@@ -36,7 +36,7 @@ public class _02_test2 {
 		};
 
         // Scheduling tasks to run after specified delays
-        timer.schedule(task2, 0, 5000); // 1000=1초후 호출, 5000=5초마다 반복
+        timer.schedule(task2, 0, 1000); // 1000=1초후 호출, 5000=5초마다 반복
         timer.schedule(task1, 20000); // Using the schedule method of the timer class	// 타이머 시간
 	}
 
