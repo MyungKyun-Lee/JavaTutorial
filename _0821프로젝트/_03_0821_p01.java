@@ -43,18 +43,23 @@ public class _03_0821_p01 {
 		
 		
 		System.out.println("점심 메뉴 맞추기 (빈칸을 채워라!!!)");
-		int c=0;
-		
 		// c가 1 또는 2 외의 다른 숫자 입력 시 do 반복.
-		do {
+//		String c="";
+//		do {
+//			System.out.println("난이도를 선택하세요.");			
+//			System.out.print("상(1) 또는 하(2) : ");
+//			c =in.nextLine();
+//		} while ( !c.equals("1") && !c.equals("2") );	
+////			in.nextLine();
+		String c="";
+		for ( ;!c.equals("1") && !c.equals("2"); ) {
 			System.out.println("난이도를 선택하세요.");			
-			System.out.println("상(1) 또는 하(2)");
-			c =in.nextInt();
-			in.nextLine();
-		} while (c !=1 && c!=2);
+			System.out.print("상(1) 또는 하(2) : ");
+			c =in.nextLine();
+		}
 		
 		// c의 값이 1일 경우 밑에 for문에서의 a배열을 aA배열로 치환하여 진행하도록 하는 if문
-		if (c == 1) {
+		if (c.equals("1")) {
 			for (int i=0; i<a.length; i++) {
 				a[i] = aA[i];
 			}
@@ -80,7 +85,7 @@ public class _03_0821_p01 {
 			int num = r.nextInt(20);
 			// 랜덤수가 겹치지 않게 하기 위한 if문
 			if (arr[num] != 1) {
-				System.out.println(a[num].charAt(0)+"[ ]"+a[num].charAt(2));
+				System.out.print(a[num].charAt(0)+"[ ]"+a[num].charAt(2)+" ");
 				arr[num] = 1;
 			} else {
 				i = i - 1;
