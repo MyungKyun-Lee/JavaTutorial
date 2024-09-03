@@ -1,0 +1,49 @@
+create table e_user(
+id varchar2(8) primary key,
+name varchar2(10),
+gender varchar2(2) CHECK (gender IN ('남','여')),
+point number(6,2));
+
+create table event_e(
+e_num varchar2(3) primary key,
+e_name varchar2(10),
+e_day timestamp);
+
+create table event_join(
+join_num varchar2(3) primary key,
+id varchar2(8),
+e_num varchar2(3),
+message varchar2(10),
+constraint fk_event_join_id foreign key (id) references e_user(id) on delete cascade,
+constraint fk_event_join_e_num foreign key (e_num) references event_e(e_num) on delete set NULL
+);
+
+// e_user에 2명의 학생 입력하기
+insert into e_user values ('111','hong','남',33.33);
+insert into e_user values ('222','lee','여',33.33);
+select * from e_user;
+
+// event에 2개의 이벤트 등록하기
+insert into event_e values ('e01','C강의','2024/09/09');
+insert into event_e values ('e02','html강의','2024/09/10');
+select * from event_e;
+
+// 이벤트 신청하기
+insert into event_join values ('j01','111','e01','취업');
+insert into event_join values ('j02','111','e02','취업');
+insert into event_join values ('j03','222','e02','교양');
+select * from event_join;
+
+// 이벤트 중에 html강의 삭제 하기
+delete from event_e where e_num = 'e02';
+select * from event_join;  
+
+// 고객 아이디가 222인 사람 삭제하기
+delete from e_user where id='222';
+select * from event_join;
+
+select a.id, a.name, b.e_num, b.e_name
+from e_user a, event_e b, event_join c 
+where a.id = c.id 
+and b.e_num=c.e_num
+order by a.id;

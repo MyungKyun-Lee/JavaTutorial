@@ -7,7 +7,7 @@ public class _0826_q2 {
 		// String a ="aabbccddeeeaaaa";
 		// a문자열은 통신 문자이다. a 문자 중 가장 길이를 출력하시오.
 		// 위 예제에서는 결과값이 4가된다.
-		String a ="aabbccddeeeaaaa ";
+		String a ="aabbccddeeeaaaa";
 		
 		char maxchar = ' ';
 		int maxcnt = 0;

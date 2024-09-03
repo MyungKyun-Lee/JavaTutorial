@@ -1,0 +1,32 @@
+member table
+id : 8글자, 기본키
+name : 한글5글자
+tel : 13글자
+
+car table
+carnum : 4글자
+id : 8글자, 오래키(참조하는 정보-member릴레이션의 id컬럼)
+
+이렇게 테이블을 논리적설계까지 완료 하였습니다.
+물리적 테이블을 만들기 위한 퀴리문을 조별로 완성해 보세요.
+이때, 메모장 등 손코딩으로 합니다.
+
+-----------------------------------------------------------------
+create table member (
+id varchar2(8) not null primary key,
+name varchar2(10),
+tel varchar2(13)
+);
+
+create table car (
+carnum varchar2(4),
+id varchar2(8) not null,
+CONSTRAINT fk_id foreign key(id) references member(id)
+);
+
+-----------------------------------------------------------------
+create table car (
+carnum varchar2(4),
+id varchar2(8),
+foreign key(id) references member(id)
+);

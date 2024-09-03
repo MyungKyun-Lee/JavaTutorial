@@ -1,0 +1,18 @@
+select * from stu;
+select * from sub;
+select * from sugang;
+
+
+create table attend (
+attend_id varchar2(3),
+id varchar2(8),
+event_num number(3),
+attend_reason varchar2(100),
+primary key(attend_id),
+constraint fk_customer_id3 foreign key(id) references customer(id),
+constraint fk_event_num foreign key(event_num) references event(event_num)
+);
+
+
+
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Oracle - OraDb11g_home1
