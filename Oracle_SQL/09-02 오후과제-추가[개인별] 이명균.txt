@@ -1,0 +1,24 @@
+1. 모든 사람의 이름과 주민번호를 출력하고 나이를 출력하시오.
+select jumin 주민번호, trunc(MONTHS_BETWEEN(sysdate, to_date(substr(jumin,1,6)))/12) 나이 from users;
+또는
+select jumin 주민번호, trunc((sysdate- to_date(substr(jumin,1,6)))/365) 나이_일자계산 from users;
+
+2. 모든 사람의 정보를 출력하시오.
+   단 이름을 마스킹하시요.
+   마스킹 방법은 첫글자는 그대로 나머지는 *, *는 갯 수는 이름의 길이보다 하나 적다.
+   예) abcdef > a*****
+select substr(name,1,1) || translate(substr(name, 2, LENGTH(name)), substr(name, 2, LENGTH(name)),'*********') 이름변경  from users;
+또는
+select RPAD(substr(name,1,1), length(name), '*') 이름변경 from users;
+
+
+
+3. 모든 사람의 정보를 출력하시오.
+    1학년은 이름뒤에 *, 2학년은 이름 뒤에 %, 3학년은 이름뒤에 #, 4학년은 이름뒤에 !를
+   추가하여 출력하시오.
+select grade 학년, case grade when '1' then name || '*'
+                       when '2' then name || '%'
+                       when '3' then name || '#'
+                       when '4' then name || '!'
+	           end as 이름
+from users;   
