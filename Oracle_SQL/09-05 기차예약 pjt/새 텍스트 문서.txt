@@ -1,0 +1,5 @@
+
+select (select st_name from station where st_id = c.s_st) as "출발역", (select st_distance from station where st_id = c.s_st) as "거리",,
+(select st_name from station where st_id = c.e_st) as "도착역", (select st_distance from station where st_id = c.e_st) as "거리",
+from schedule c
+

@@ -56,7 +56,12 @@ public class _08_0910_q1_q8 {
 		}
 		System.out.println("------ 세로 3연속값 좌표");
 		
-		int[][] b = {{1,1,0,2},{3,2,1,2},{0,0,3,2},{4,4,4,4},{2,4,3,1},{2,4,1,3}};
+		int[][] b = {{1,1,0,2},
+					 {3,2,1,2},
+					 {0,0,3,2},
+					 {4,4,4,2},
+					 {2,4,3,4},
+					 {2,4,1,4}};
 		// 7.게임배열에서 같은 번호가 세로로 연속3개 이상이면 제거가 가능, 제거가 가능한 블록의 좌표를 출력
 		int [] temp= {-1,1};
 		int [][] xy= {{-1,-1},{-1,-1}};
@@ -64,22 +69,23 @@ public class _08_0910_q1_q8 {
 		for (int i=0; i<b[0].length; i++) {
 			for (int j=0; j<b.length; j++) {
 //				System.out.print(b[j][i]+"\t");
-				if (b[j][i]==temp[0]) {
-					temp[0]=b[j][i];
-					temp[1]++;
-					if (temp[1]==3) {
-						xy[1][0]=i+1;
-						xy[1][1]=j+1;
-						System.out.print("연속값="+temp[0]+" ");
-						System.out.print("x1,y1=("+xy[0][0]+","+xy[0][1]);
-						System.out.println(")\tx3,y3=("+xy[1][0]+","+xy[1][1]+")");
-					}
-				} else {
+				if (b[j][i]!=temp[0]) {
 					temp[0]=b[j][i];
 					temp[1]=1;
 					xy[0][0]=i+1;
 					xy[0][1]=j+1;
+				} else {
+					temp[0]=b[j][i];
+					temp[1]++;
 				}
+				if (temp[1]>=3) {
+					xy[1][0]=i+1;
+					xy[1][1]=j+1;
+					System.out.print("연속값="+temp[0]+" ");
+					System.out.print("x1,y1=("+xy[0][0]+","+xy[0][1]);
+					System.out.println(")\tx3,y3=("+xy[1][0]+","+xy[1][1]+")");
+				}
+
 			}
 		}
 		System.out.println("------ 가로 3연속값 좌표");
