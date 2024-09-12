@@ -1,0 +1,24 @@
+[root 계정 패스워드 변경]
+c:/>mysql -u root -p
+
+
+MariaDB((none)]>USE mysql
+
+UPDATE user SET password = password('원하는비밀번호') WHERE user = 'root';
+SELECT user, host, plugin FROM user;
+
+---set password for 'root'@'localhost' = password('1111');
+flush privileges;
+
+select host, user, password from user;
+
+
+원격계정 설정
+use mysql
+create user '원격계정아이디'@'%' identified by '원격계정패스워드';
+	create user 'root'@'%' identified by '1111';
+grant all privileges on 원격접속할디비이름.* to 원격접속아이디@'%';
+flush privileges;
+
+확인
+select host, user, password from user;

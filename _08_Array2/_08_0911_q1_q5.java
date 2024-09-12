@@ -1,9 +1,9 @@
 package _08_Array2;
 
-public class _08_0911_q1_q6 {
+public class _08_0911_q1_q5 {
 
 	public static void main(String[] args) {
-		// 2차원 배열 문제1~6 풀이
+		// 2차원 배열 문제1~5 풀이
 		int[][] a= new int[4][5];
 		int num = 1;
 		int row = a.length;
@@ -20,6 +20,7 @@ public class _08_0911_q1_q6 {
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
+				a[i][j]=0;
 			}
 			System.out.println();
 		}
@@ -37,6 +38,7 @@ public class _08_0911_q1_q6 {
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
+				a[i][j]=0;
 			}
 			System.out.println();
 		}
@@ -58,23 +60,22 @@ public class _08_0911_q1_q6 {
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;			}
+				a[i][j]=0;
+			}
 			System.out.println();
 		}
 		System.out.println("---------문제3");
 		
 		// 문제4---------------------------------
 		num=1;
-		for (int i=0; i<col+3; i++) {
-			for (int j=0; j<row; j++) {
-				int column = i - j;
+		for (int i=0; i < col+3; i++) {
+			for (int j=0; j < row; j++) {
+				int column = i-j;
 				if (column > -1 && column < col) {
-//					System.out.print("a["+j+"]["+column+"]="+num+"\t");
 					a[j][column]=num;
 					num++;
 				}
 			}
-//			System.out.println();
 		}
 		
 		for (int i=0; i<a.length; i++) {
@@ -90,22 +91,21 @@ public class _08_0911_q1_q6 {
 		num=1;
 		int x=0;
 		int y=0;
-		for (int i=0; i<20; i++) {
-			for (int j=0; j<col+row; j++) {
-				System.out.print("a["+x+"]["+y+"]="+num+"\t");
-				a[x][y]=num;
-				num++;
-				if (y<col-1) { y++; }
-				if (y==col-1 && x<row) { x++; }
-			}
-			for (int j=0; j<col+row; j++) {
-				System.out.print("a["+x+"]["+y+"]="+num+"\t");
-				a[x][y]=num;
-				num++;
-				if (y<col-1) { y++; }
-				if (y==col-1 && x<row) { x++; }
-			}
-			
+		int col_l=0, col_r=col-1;
+		int row_u=0, row_d=row-1;
+		while (num <= col*row) {
+			for (x=col_l; x <= col_r && num <= col*row; x++) a[y][x]=num++;
+			x--;
+			row_u++;
+			for (y=row_u; y <= row_d && num <= col*row; y++) a[y][x]=num++;
+			y--;
+			col_r--;
+			for (x=col_r; x >= col_l && num <= col*row; x--) a[y][x]=num++;
+			x++;
+			row_d--;
+			for (y=row_d; y >= row_u && num <= col*row; y--) a[y][x]=num++;
+			y++;
+			col_l++;
 		}
 		
 		for (int i=0; i<a.length; i++) {
