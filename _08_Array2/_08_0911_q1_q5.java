@@ -4,7 +4,7 @@ public class _08_0911_q1_q5 {
 
 	public static void main(String[] args) {
 		// 2차원 배열 문제1~5 풀이
-		int[][] a= new int[4][5];
+		int[][] a= new int[5][4];
 		int num = 1;
 		int row = a.length;
 		int col = a[0].length;
@@ -68,7 +68,7 @@ public class _08_0911_q1_q5 {
 		
 		// 문제4---------------------------------
 		num=1;
-		for (int i=0; i < col+3; i++) {
+		for (int i=0; i < col+row; i++) {
 			for (int j=0; j < row; j++) {
 				int column = i-j;
 				if (column > -1 && column < col) {
