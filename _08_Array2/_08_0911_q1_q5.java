@@ -4,7 +4,7 @@ public class _08_0911_q1_q5 {
 
 	public static void main(String[] args) {
 		// 2차원 배열 문제1~5 풀이
-		int[][] a= new int[5][4];
+		int[][] a= new int[4][5];
 		int num = 1;
 		int row = a.length;
 		int col = a[0].length;
@@ -12,15 +12,14 @@ public class _08_0911_q1_q5 {
 		// 문제1---------------------------------
 		for (int i=col-1; i>=0; i--) {
 			for (int j=0; j<row; j++) {
-				a[j][i]=num;
-				num++;
+				a[j][i]= num++;
 			}
 		}
 		
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;
+				a[i][j]= 0;
 			}
 			System.out.println();
 		}
@@ -30,15 +29,14 @@ public class _08_0911_q1_q5 {
 		num=1;
 		for (int i=row-1; i>=0; i--) {
 			for (int j=col-1; j>=0; j--) {
-				a[i][j]=num;
-				num++;
+				a[i][j]= num++;
 			}
 		}
 		
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;
+				a[i][j]= 0;
 			}
 			System.out.println();
 		}
@@ -49,18 +47,17 @@ public class _08_0911_q1_q5 {
 		for (int i=0; i<row; i++) {
 			for (int j=0; j<col; j++) {
 				if (i%2==0) {
-					a[i][j]=num;
+					a[i][j]= num++;
 				} else {
-					a[i][col-j-1]=num;
+					a[i][col-j-1]= num++;
 				}
-				num++;
 			}
 		}
 		
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;
+				a[i][j]= 0;
 			}
 			System.out.println();
 		}
@@ -68,12 +65,12 @@ public class _08_0911_q1_q5 {
 		
 		// 문제4---------------------------------
 		num=1;
-		for (int i=0; i < col+row; i++) {
+		for (int i=0; i < row+col-1; i++) {
 			for (int j=0; j < row; j++) {
 				int column = i-j;
+//				System.out.println("a["+j+"]["+column+"]="+num);
 				if (column > -1 && column < col) {
-					a[j][column]=num;
-					num++;
+					a[j][column] = num++;
 				}
 			}
 		}
@@ -81,7 +78,7 @@ public class _08_0911_q1_q5 {
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;
+				a[i][j]= 0;
 			}
 			System.out.println();
 		}
@@ -94,16 +91,16 @@ public class _08_0911_q1_q5 {
 		int col_l=0, col_r=col-1;
 		int row_u=0, row_d=row-1;
 		while (num <= col*row) {
-			for (x=col_l; x <= col_r && num <= col*row; x++) a[y][x]=num++;
+			for (x=col_l; x <= col_r && num <= col*row; x++) a[y][x]= num++;
 			x--;
 			row_u++;
-			for (y=row_u; y <= row_d && num <= col*row; y++) a[y][x]=num++;
+			for (y=row_u; y <= row_d && num <= col*row; y++) a[y][x]= num++;
 			y--;
 			col_r--;
-			for (x=col_r; x >= col_l && num <= col*row; x--) a[y][x]=num++;
+			for (x=col_r; x >= col_l && num <= col*row; x--) a[y][x]= num++;
 			x++;
 			row_d--;
-			for (y=row_d; y >= row_u && num <= col*row; y--) a[y][x]=num++;
+			for (y=row_d; y >= row_u && num <= col*row; y--) a[y][x]= num++;
 			y++;
 			col_l++;
 		}
@@ -111,7 +108,7 @@ public class _08_0911_q1_q5 {
 		for (int i=0; i<a.length; i++) {
 			for (int j=0; j<a[0].length; j++) {
 				System.out.print(a[i][j]+"\t");
-				a[i][j]=0;
+				a[i][j]= 0;
 			}
 			System.out.println();
 		}
