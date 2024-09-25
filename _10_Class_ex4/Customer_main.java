@@ -6,8 +6,11 @@ public class Customer_main {
 	
 	public static void main(String[] args) {
 		Customer_m Cust_meg = new Customer_m();;
-		Event_m event_meg = new Event_m();
+		Event_m Event_meg = new Event_m();
 		Scanner in = new Scanner(System.in);
+		
+		Cust_meg.CustEvent_meg = Event_meg;
+		Event_meg.eventCust_meg = Cust_meg;
 		
 		// 고객관리 프로그램
 		System.out.println("[고객관리 프로그램]");
@@ -22,15 +25,18 @@ public class Customer_main {
 			int selNum = Integer.parseInt(selectMenu);
 			
 			if (selNum == 1) {
-					Cust_meg.Customer_menu();
+				Cust_meg.Customer_menu();
 			} else if (selNum == 2) {
-					event_meg.Event_menu();
+				Event_meg.Event_menu();
 			} else if (selNum == 0) {
 				break;
 			}
 		}
 		
 		System.out.println("[프로그램]을 종료합니다");
+		in.close();
+//		Cust_meg.in.close();
+//		Event_meg.in.close();
 	}
 
 }

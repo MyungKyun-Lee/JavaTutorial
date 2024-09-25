@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Event_m {
 	Scanner in = new Scanner(System.in);
+	Customer_m eventCust_meg = null;
 	
 	Event_one[] Cust_eve_list = new Event_one[10];
 	int tot_event_num=0;
@@ -47,9 +48,18 @@ public class Event_m {
 		String temp_id=null;
 		String temp_subject=null;
 		String temp_content=null;
+		int find_num =-1;
 		
 		System.out.print("고객 ID를 입력 하세요 :");
-		temp_id = in.nextLine();
+		do {
+			temp_id = in.nextLine();
+			find_num = eventCust_meg.find_cust(temp_id);
+			if (find_num == -1) {
+				System.out.println("등록된 ID가 아님니다! 다시입력해 주세요");
+				System.out.print("고객 ID를 입력 하세요 :");
+			}
+		} while (find_num == -1);
+		
 		System.out.print("이벤트 제목를 입력 하세요 :");
 		temp_subject = in.nextLine();
 		System.out.print("이벤트 내용을 입력 하세요 :");

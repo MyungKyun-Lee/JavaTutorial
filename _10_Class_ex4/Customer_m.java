@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Customer_m {
 	Scanner in = new Scanner(System.in);
-	
+	Event_m CustEvent_meg = null;
+			
 	Customer_one[] Cust_list = new Customer_one[5];
 	int tot_one_num=0;
 	
@@ -16,6 +17,7 @@ public class Customer_m {
 			System.out.println("2. 정보보기");
 			System.out.println("3. 수정하기");
 			System.out.println("4. 삭제하기");
+			System.out.println("5. 이벤트보기");
 			System.out.println("0. 고객관리 종료");
 			System.out.print("  선택 >>");
 			
@@ -31,6 +33,8 @@ public class Customer_m {
 				  mod();   break; // 수정
 			  case 4:
 				  dell();  break; // 삭제
+			  case 5:
+				  CustEvent_meg.serch(); break; // 삭제
 			  case 0:
 				  System.out.println(">>고객관리 종료<<");
 			    break;
@@ -57,17 +61,23 @@ public class Customer_m {
 		System.out.print("고객 name을 입력 하세요 :");
 		temp_name = in.nextLine();
 		
-		Customer_one cust_o = new Customer_one();
-		cust_o.id = temp_id;
-		cust_o.name = temp_name;
-		
-		for (int i=0; i<Cust_list.length; i++) {
-			if (Cust_list[i] == null) {
-				Cust_list[i]= cust_o;
-				tot_one_num++;
-				break;
+		int find_num = find_cust(temp_id);
+		if (find_num == -1) {
+			Customer_one cust_o = new Customer_one();
+			cust_o.id = temp_id;
+			cust_o.name = temp_name;
+			
+			for (int i=0; i<Cust_list.length; i++) {
+				if (Cust_list[i] == null) {
+					Cust_list[i]= cust_o;
+					tot_one_num++;
+					break;
+				}
 			}
+		} else {
+			System.out.println("["+temp_id +"] 아이디는 중복으로 가입할 수 없습니다!");
 		}
+		
 	}
 	public void serch() {
 		System.out.println("<정보보기>");
@@ -84,6 +94,10 @@ public class Customer_m {
 			int find_num = find_cust(temp_id);
 			if (find_num != -1)	{
 				Cust_list[find_num].prt();
+				for (int i=0; i<CustEvent_meg.Cust_eve_list.length; i++) {
+					if (CustEvent_meg.Cust_eve_list[i] != null)
+						CustEvent_meg.Cust_eve_list[i].prt();
+				}
 				System.out.println("----------조회된 고객 입니다.");
 			}
 			else {
