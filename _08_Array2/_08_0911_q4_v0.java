@@ -4,8 +4,7 @@ public class _08_0911_q4_v0 {
 
 	public static void main(String[] args) {
 		// 2차원 배열 문제4 풀이
-		int[][] a= new int[5
-		                   ][5];
+		int[][] a= new int[5][5];
 		int num = 1;
 		int row = a.length;
 		int col = a[0].length;

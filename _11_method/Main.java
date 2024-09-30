@@ -48,6 +48,10 @@ public class Main {
 	        System.out.println("현재 아이피 : " + ipAddress.getHostAddress());
 	        System.out.println("현재 호스트명 : " + ipAddress.getHostName());
 		}
+		 
+		String aaa = null;
+		
+		System.out.println(aaa);
 		
 	}
 

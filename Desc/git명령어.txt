@@ -1,0 +1,22 @@
+cd d:/Workspace/java_src/JavaTutorial/src
+
+cd Workspace/java_src/JavaTutorial/src
+
+• 사무실(집)에서
+git init
+git add .
+git commit –m “Commit message“
+git branch –M main
+git remote add origin http이후 작업시
+
+• 사무실(집)에서
+git add .
+git commit –m “Commit message“
+git push
+
+• 집(사무실)에서
+git pull
+
+
+
+[9월 27일(금) 성남시 청년취업박람회 참여업체]
