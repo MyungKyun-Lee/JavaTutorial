@@ -98,22 +98,22 @@ public class CarParkingCustomMge {
     	caridx = findCar(temp_carnum);
     	if (caridx != -1) {
     		CarParkingOne out = new CarParkingOne();
-    		out.setCarnum(carList.get(caridx).carnum);
-			out.setCartype(carList.get(caridx).cartype);
-			out.setCarpay(carList.get(caridx).carpay);
-			out.setCarInTime(carList.get(caridx).carintime);
+    		out.setCarnum(carList.get(caridx).getCarnum());
+			out.setCartype(carList.get(caridx).getCartype());
+			out.setCarpay(carList.get(caridx).getCarpay());
+			out.setCarInTime(carList.get(caridx).getCarInTime());
 			// 출차시간 저장
 			carList.get(caridx).setCarOutTime(curTime());
 
-			out.setCarOutTime(carList.get(caridx).carouttime);
+			out.setCarOutTime(carList.get(caridx).getCarOutTime());
 			
 			// 출차 추가요금 계산
-			int addPay = carList.get(caridx).carpay + calPay(carList.get(caridx).carintime, carList.get(caridx).carouttime);
+			int addPay = carList.get(caridx).getCarpay() + calPay(carList.get(caridx).getCarInTime(), carList.get(caridx).getCarOutTime());
 			out.setCarpay(addPay);
 
 			// 출차정보 정보 출력
 			carList.get(caridx).prt_serch();
-			int retMin = calPayMinut(carList.get(caridx).carintime, curTime());
+			int retMin = calPayMinut(carList.get(caridx).getCarInTime(), carList.get(caridx).getCarOutTime());
 			System.out.println("["+retMin+"]분 동안 주차한 주차요금 : "+addPay+"원 입니다.");
 			System.out.println(carList.get(caridx).getCarnum()+"의 챠량이 출차 되었습니다");
 
@@ -131,7 +131,7 @@ public class CarParkingCustomMge {
     public int findCar(String car_no) {
     	int ret = -1;
     	for (int i = 0; i < carList.size(); i++) {
-			if (carList.get(i).carnum.equals(car_no)) {
+			if (carList.get(i).getCarnum().equals(car_no)) {
 				ret = i;
 				break;
 			}
@@ -152,10 +152,10 @@ public class CarParkingCustomMge {
     	caridx = findCar(temp_carnum);
     	if (caridx != -1) {
 			for(int i=0; i<carList.size();i++) {
-				if(carList.get(i).carnum.equals(temp_carnum)) {
+				if(carList.get(i).getCarnum().equals(temp_carnum)) {
 					carList.get(i).prt_serch();
-					int retMin = calPayMinut(carList.get(i).carintime, curTime());
-					int retpay = carList.get(i).carpay + calPay(carList.get(i).carintime, curTime());
+					int retMin = calPayMinut(carList.get(i).getCarInTime(), curTime());
+					int retpay = carList.get(i).getCarpay() + calPay(carList.get(i).getCarInTime(), curTime());
 					System.out.println(retMin+"분 동안 주차한 주차요금 : "+retpay+"원 입니다.");
 					break;
 				}
@@ -178,7 +178,9 @@ public class CarParkingCustomMge {
     	int amount = calPayMinut(intTime, ouTime);
 //		System.out.println(amount);
 		if (amount > 30) {
-			ret = (amount / 10) *500;
+			amount -= 30; 
+			double temp = ((double)amount / 10)*500;
+			ret = (int)temp;
 		}
 		else {
 			ret = 0;

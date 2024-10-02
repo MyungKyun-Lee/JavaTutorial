@@ -40,7 +40,7 @@ public class CarParkingMge {
 		System.out.println("<전체조회>");
     	int ret = -1;
     	for (int i = 0; i < carList.size(); i++) {
-			if (carList.get(i).carnum.equals(car_no)) {
+			if (carList.get(i).getCarnum().equals(car_no)) {
 				ret = i;
 				break;
 			}
@@ -86,7 +86,7 @@ public class CarParkingMge {
     	
     	for(int i=0; i<outList.size(); i++) {
     		outList.get(i).prt();
-    		sumPay += outList.get(i).carpay;
+    		sumPay += outList.get(i).getCarpay();
     		tot_cnt++;
     	}
     	System.out.println("출차된 차량은 "+tot_cnt+"건 이며, 정산된 총 주차 요금은 :"+sumPay+"원 입니다.");
