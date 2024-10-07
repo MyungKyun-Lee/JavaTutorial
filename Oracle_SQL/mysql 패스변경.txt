@@ -22,3 +22,6 @@ flush privileges;
 
 확인
 select host, user, password from user;
+
+
+ORACLE 암호: system / oracle
