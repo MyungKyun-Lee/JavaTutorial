@@ -1,0 +1,22 @@
+create table Member1 (
+id varchar2(10) primary key,
+name varchar(10),
+addr varchar2(20),
+age number(3),
+point number(3)
+);
+
+
+desc Member1;
+
+insert into Member1 values('aa','홍길동','서울',33,50);
+insert into Member1 values('bb','누구나','일이삼사오육칠팔구십',22,87);
+insert into Member1 values('cc','아무개','수원',41,69);
+
+select * from Member1;
+
+조건1. connecion이 확인되어야 함.
+조건2. connection 작업이 반납되어야 함.
+조건3. try catch finally구문이 확인되어야 함.
+조건4. 매핑이 확인되어야 함.
+조건5. 쿼리 실행이 확인 되어야 함.
