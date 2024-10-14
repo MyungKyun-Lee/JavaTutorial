@@ -39,5 +39,3 @@ noorder;
 
 insert into openidea values(num.nextval,'풍선 날리기','풍선을 하늘로 높이 날리면 기상조건을 알수 있다','홍길동',default);
 select * from openidea where subject like '%풍선%';
-
-select * from openidea where INSTR(subject, '풍선') > 0;
