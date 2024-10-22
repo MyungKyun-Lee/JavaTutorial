@@ -20,6 +20,10 @@ create user '원격계정아이디'@'%' identified by '원격계정패스워드'
 grant all privileges on 원격접속할디비이름.* to 원격접속아이디@'%';
 flush privileges;
 
+URL : jdbc:mariadbl://localhost:3306/mysql
+ID : root
+PW : 1111
+
 확인
 select host, user, password from user;
 
