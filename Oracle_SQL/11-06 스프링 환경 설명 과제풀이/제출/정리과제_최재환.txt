@@ -1,0 +1,79 @@
+1. 클라이언트가 request를 할 때 공부해야 하는 것 3가지
+	url과 method, parameter
+
+2. url의 구성하는 각 부분을 설명하시오
+
+http://localhost:8080/hom/timeline
+
+http// : 프로토콜
+ip : 네트워크상 특정 기기의 고유주소
+8080 : 포트넘버 그 기기에서 사용하는 고유번호
+hom : 컨테스트->접근경로
+timeline : value값
+
+3. 스프링에서  @Controller의 의미
+이곳이 컨트롤러의 역할을 한다고 정의
+
+
+4. 스프링에서 RequestMapping의 의미
+클라이언트가 요청한 value값을 리턴하는 메소드
+
+
+5. 스프링 컨트롤러에서   return 다음에 오는 문자열의 의미
+view의 이름
+
+
+6. Maven  Spring 의 디렉토리 구조
+
+
+7. 이미지나 정적컨텐츠의 위치
+src/main/webapp/resources
+
+
+8. 스프링에서 한글을 설정하는 방법 3가지
+
+window-preferences
+	1. general -> Workspace -> text file Other를 UTF-8로 변경
+	2. JSP File -> Encoding를 UTF-8로 변경
+	3. CSS File -> Encoding를 UTF-8로 변경
+	4. html 페이지 최상단에 pageEncoding="UTF-8로 삽입 또는 변경
+
+
+9. 컨텍스트패스의 의미
+서버내에서 접근 가능한 경로를 지정함.
+
+
+10. 클라이언트에서 get 방식으로 request를 발생하는 방법 2가지
+	1. 주소창을 이용해 ? 요청하는방식
+	2. hrml에서 form태그를 이용하는 방식
+
+--- 추가하면 좋은 이론들
+DNS, IP, PORT
+REST API
+Web server 와 WAS
+View Template
+
+
+DNS 
+- Domain Name Server
+
+IP 
+- 네트워크상 기기의 고유주소
+
+PORT 
+- 기기안에서 사용하는 고유 번호
+
+REST API 
+- 자원을 이름으로 구분하고 해당자원의 상태를 주고받는 모든것
+  URI Method를 통해 해당 자원에 대한 CRUD를 적용한다
+
+Web 서버와 WAS 
+Server
+- 첨부파일과 정적문서등의 정적 서비스 
+WAS 
+- Web Application Server 데이터 베이스 작업등의 동적 서비스
+
+View Template 
+- 클라이언트가 request하면 WAS에서 JSP, 타임리프등의 View템플릿이 
+html로 처리하여 클라이언트에게 response한다.
+

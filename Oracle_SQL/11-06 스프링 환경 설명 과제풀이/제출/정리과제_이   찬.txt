@@ -1,0 +1,88 @@
+정리질문
+1. 클라이언트가 request를 할 때 공부해야 하는 것 3가지
+url: http://~
+parameter: 매개 변수와 비슷한 역할을 한다. 서베에게 전송 할 데이터.
+method: 파라미터를 어떤 방법으로 보내줄 것인지에 대한 정의다. GET방식: 조회(select)와 같은 역할을 수행한다. 
+							url에 직접 명시되어 데이터 정보가 노출 될 수 있다.
+						        POST방식: 생성(create, add)와 같은 역할을 수행한다.
+							get방식에 비해 은닉화가 수월하다.
+RestAPI는 위의 GET과 POST방식을 포함하여 update역할을 하는 put과 delete 등등을 추가하여 CRUD의 의미를 메소드에 담는다.
+메소드는 파라미터가 없어도 작동 한다.
+
+2. url의 구성하는 각 부분을 설명하시오.
+e.g) http://localhost:8080/hom/WEB-INF/classes/www/silver/hom/HomeController.java
+프로토콜 - http://			휴먼 교육 센터로 가는 방법
+서버의 주소 - localhost:		휴먼 교육 센터가 있는 빌딩 주소
+포트번호 - 8080			교육 센터가 있는 층수
+Context Path - hom		교육 센터 내 강의실
+value - hom뒤의 남은 url		강의를 듣는 행위
+
+3. 스프링에서  @Controller의 의미
+url을 처리하는 역할을 수행한다.
+
+4. 스프링에서 RequestMapping의 의미
+리퀘스트 value값을 통해 해당하는 파일을 실행한다. get, post, delete 와 같은 메소드를 연결한다. 
+이후 return ... 에 나오는 view template을 렌더링한다.
+
+5. 스프링 컨트롤러에서   return 다음에 오는 문자열의 의미
+해당 문자열과 동일한 이름을 가진 view파일을 렌더링하여 불러온다.
+
+6. Maven  Spring 의 디렉토리 구조
+src/main/java > www.silver.hom > HOmeController.java - 자바 소스 위치
+src/main/resources - mybatis 설정파일 위치
+webapp > resources - 정적 컨텐츠 위치(css, image, etc)
+views > home.jsp - View파일 위치
+spring, web.xml - 설정 파일 위치
+pom.xml - Maven 설정 파일
+
+
+7. 이미지나 정적컨텐츠의 위치
+webapp > resources
+
+8. 스프링에서 한글을 설정하는 방법 3가지
+
+EUC-KR로 설정할 수 있다.
+
+하지만 만약 텍스트 인코딩이 UTF-8일 경우,
+	1) web.xml
+	<filter> 
+			<filter-name>encoding-filter</filter-name> 
+			<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+			<init-param> 
+				<param-name>encoding</param-name> 
+				<param-value>UTF-8</param-value> 
+			</init-param> 
+		</filter> 
+		<filter-mapping> 
+			<filter-name>encoding-filter</filter-name> 
+			<url-pattern>/*</url-pattern> 
+		</filter-mapping>
+		라는 코드를 추가한다. </web-app> 밑으로 추가하면 안된다.
+
+	2) 한글이 되길 원하는 파일에 <%@ page language="java" contentType="text/html; charset=UTF-8"
+	    pageEncoding="UTF-8"%> 를 추가한다.
+
+9. 컨텍스트패스의 의미
+웹어플리케이션을 구분하기 위한 경로를 의미한다. WAS는 url안의 path, 위의 url에선 hom 에 해당하는 스프링 프로젝트를 확인하고
+해당 프로젝트의 정적 컨텐츠와 동적 컨텐츠를 판별하고 맞는 프로그램에 넘겨준다. 
+
+10. 클라이언트에서 get 방식으로 request를 발생하는 방법 2가지
+url을 통해 리퀘스트를 보낸다.
+a태그(a href)를 사용하여 리퀘스트를 보낸다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+1.	클라이언트가 request를 할 때, 공부해야하는 것 세 가지.
+	- url, parameter, method
+
+2.	URL을 구성하는 각 부분을 설명하시오
+	- 프로토콜://서버주소:port/context path/request value
+	- 서버의 주소(ip, portnum), context path, value값으로 이루어져있다.
+	- ip : 서버를 찾아 간다. (domain의 영역)
+	- port : 어떤 서비스를 이용할 것인지 결정
+	- context path : 그 서비스가 무엇인지 결정(생략 가능)
+	- value : 실제 서비스 내용
+
+3.	스프링에서 @Controller의 의미
+	- 요청받아 서비스에 요청, 결과를 view로 반환
+
+4.	스프링에서 requestMapping의 의미
+	- client가 원하는 요청 분석
+
+5.	스프링 컨트롤러에서 return 다음에 오는 문자열의 의미
+	- 결과를 보여줄 view의 이름
+
+6.	Maven spring의 디렉토리 구조
+	- 자바 소스, 정적 컨텐츠, view 파일, 설정 파일, Maven 설정 파일, Mybatis 설정 파일
+
+7.	이미지나 정적 컨텐츠의 위치
+	- webapp하위 resources 폴더
+
+8.	스프링에서 한글을 설정하는 방법 세 가지
+	- encoding 설정
+	- web.xml에 인코딩 필터 추가
+	- home.jsp에 헤더 추가
+
+9.	Context path의 의미
+	- client가 요청한 서비스가 무엇인지를 나타내는 것. server가 context path를 보고 서비스 연결.
+
+10.	client에서 get 방식으로 request를 발생하는 방법 두 가지
+	- domain, ip
+
+# 추가 이론
+-	DNS, IP, PORT
+	- DNS : Domain Name Server - domain request >> ip response
+	- ip : 인터넷의 주소
+	- port : 프로그램 주소
+
+-	REST API
+	- 메서드에 CRUD의 의미를 담는 것.
+
+-	Web server, WAS
+	- Web server : 정적 컨텐츠 서비스, 아파치
+	- WAS : 동적 컨텐츠 서비스, 톰캣
+
+-	View Template
+	- java언어를 랜더링하여 html문서로 만들어서 client에게 제공
+	- 타임리프, jsp

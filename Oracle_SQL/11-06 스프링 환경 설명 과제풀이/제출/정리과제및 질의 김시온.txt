@@ -1,0 +1,87 @@
+실습과제
+www2 프로젝트에서 진행
+각자 본인이 디자인 한 html문서 중 메인화면을 선택하여
+www2 프로젝트에 이식한다.
+
+서비스명 : 메인화면요청
+url :   /
+데이터베이스 작업없음
+응답 뷰 : home
+
+조건: 한글이 깨지지 않게 설정, 그림파일 보이게 설정.
+
+정리질문
+1. 클라이언트가 request를 할 때 공부해야 하는 것 3가지
+url method parameter
+2. url의 구성하는 각 부분을 설명하시오.
+서버주소:포트번호/context path/request path(value);
+서버주소: 서버의 위치를 나타냄
+포트번호: 서버의 특정 서비스를 지정하는 번호.
+context path : WAS에서 웹 애플리케이션을 구분하기 위한 경로,
+request value: 서버에서 요청하는 자원의 구체적인 위치를 나타냄
+
+
+3. 스프링에서  @Controller의 의미
+ MVC패턴을 사용하고있고,
+여기서 Controller는 화면(View)과 비즈니스 로직(Model)를 연결시키는 다리 역할을 한다. 
+request가 있으면 주소를 받아들여 어디로 갈지 분석하고 맞는 길로 연결시켜주는 역할이다. 
+
+4. 스프링에서 RequestMapping의 의미
+Spring 개발 시 특정 URL로 요청(Request)을 보내면 Controller에서 어떠한 방식으로 처리할지 정의한다. 
+이때 들어온 요청을 특정 method와 매핑하기 위해 사용하는 어노테이션이 바로 @RequestMapping이다.
+
+5. 스프링 컨트롤러에서   return 다음에 오는 문자열의 의미
+  view template 파일로  return한다.
+
+6. Maven  Spring 의 디렉토리 구조
+모든 메이븐 프로젝트는 프로젝트의 루트 디렉토리에'pom.xml'파일을 갖는다.
+이 pom.xml은 메이븐 프로젝트에 대한 설정 정보를 담고 잇는 파일로서,
+프로젝트에서 필요로 하는 의존 모듈이나 플러그인 등에 대한 내용을 담는다.
+
+
+
+7. 이미지나 정적컨텐츠의 위치
+spring legacy 소스 폴더의
+main  ㅡ webapp ㅡ resources 아래에 위치한다.
+
+8. 스프링에서 한글을 설정하는 방법 3가지
+1.스프링 windows창에서 preferences를 선택하고
+ enc를 검색하여 content types의 text, workspace, cssfiles, html fiels, jsp files, xml files의 encoding 설정을 utf-8로 설정한다.
+2. jsp 파일 상단에
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%> 추가한다.
+3.jsp 파일의 charset의 설정을 utf-8로 바꾸고, pageEncoding의 설정도 utf-8로 바꾼다.
+
+
+
+9. 컨텍스트패스의 의미
+WAS가 특정 프로젝트에 연결하는 데 사용하는 경로임.
+
+10. 클라이언트에서 get 방식으로 request를 발생하는 방법 2가지
+- 1. 사용자가 브라우저 주소창에 URL을 입력하고 Enter를 누르거나, 
+   2. 링크를 클릭하면 자동으로 get 요청이 발생함
+
+
+--- 추가하면 좋은 이론들
+DNS, IP, PORT
+REST API
+Web server 와 WAS
+View Template
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
